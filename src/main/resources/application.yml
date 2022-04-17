@@ -1,0 +1,27 @@
+datasources:
+  default:
+    url: jdbc:mysql://localhost/data?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&useTimezone=true&serverTimezone=UTC
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    formatSql: true
+
+netty:
+  default:
+    allocator:
+      max-order: 3
+
+jpa:
+  default:
+    entity-scan:
+      packages: com.example.model
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        hbm2ddl:
+          auto: update
+        cache:
+          queries: false
+          use_second_level_cache: false
+          use_query_cache: false
