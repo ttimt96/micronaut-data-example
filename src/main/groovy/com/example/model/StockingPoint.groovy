@@ -2,13 +2,7 @@ package com.example.model
 
 import io.micronaut.core.annotation.NonNull
 
-import javax.persistence.Cacheable
-import javax.persistence.Entity
-import javax.persistence.FetchType
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
-import javax.persistence.ManyToOne
-import javax.persistence.OneToOne
+import javax.persistence.*
 import javax.validation.constraints.Size
 
 @Entity

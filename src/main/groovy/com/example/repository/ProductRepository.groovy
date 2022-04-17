@@ -83,8 +83,7 @@ abstract class ProductRepository implements CrudRepository<Product, Integer> {
 	 * @return
 	 */
 	@Executable
-	@Query(value = """SELECT * FROM Product
-						WHERE name = :name""", nativeQuery = true)
+	@Query(value = """SELECT * FROM Product WHERE name = :name""", nativeQuery = true)
 	abstract List<Product> findBySQL(String name)
 	
 	/**
@@ -94,8 +93,7 @@ abstract class ProductRepository implements CrudRepository<Product, Integer> {
 	 * @return
 	 */
 	@Executable
-	@Query("""SELECT p.name AS name,
-					 sp AS stockingPoint
+	@Query("""SELECT p.name AS name, sp AS stockingPoint
 				FROM Product p
 				JOIN p.stockingPoint sp ON p.stockingPoint.id = :stockingPointId""")
 	abstract List<ProductDTO> findByJPAQueryLanguageWithDTO(Integer stockingPointId)
@@ -119,7 +117,7 @@ abstract class ProductRepository implements CrudRepository<Product, Integer> {
 	abstract List<Product> list(Sort sort)
 	
 	/**
-	 * Dynamic query with pagination
+	 * Dynamic query with pagination (pagination + sorting)
 	 * @param id
 	 * @return
 	 */
